@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForestGuard Donation Form</title>
+    <script>window.enableEventObserver=true</script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/static/prototype.forms.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/static/jotform.forms.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/payments/paypalcomplete.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/libraries/promise-polyfill.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/payments/payment_form_embedded.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/payments/paymentUtils.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/payments/validategateways.js" type="text/javascript"></script>
+    <!-- 广告脚本已删除 -->
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/vendor/smoothscroll.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jotfor.ms/s/static/863c1a0829f/js/errorNavigation.js" type="text/javascript"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/stylebuilder/static/form-common.css?v=87bd99f"/>
+    <style type="text/css">@media print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.63945&themeRevisionID=65660e4b326633110492e01a"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_styles.css?3.3.63945" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.63945" />
+    <style type="text/css" id="form-designer-style">
+        /* Injected CSS Code */
+        /*PREFERENCES STYLE*/
+        .form-all {
+            font-family: Inter, sans-serif;
+        }
+
+        .form-line {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-all {
+            max-width: 752px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f9ff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label.form-label-left,
+        .form-label.form-label-right,
+        .form-label.form-label-left.form-label-auto,
+        .form-label.form-label-right.form-label-auto {
+            width: 230px;
+        }
+
+        .form-all {
+            font-size: 16px
+        }
+
+        .supernova .form-all, .form-all {
+            background-color: #fff;
+        }
+
+        .form-all {
+            color: #2C3345;
+        }
+        .form-header-group .form-header {
+            color: #2C3345;
+        }
+        .form-header-group .form-subHeader {
+            color: #2C3345;
+        }
+        .form-label-top,
+        .form-label-left,
+        .form-label-right,
+        .form-html,
+        .form-checkbox-item label,
+        .form-radio-item label,
+        span.FITB .qb-checkbox-label,
+        span.FITB .qb-radiobox-label,
+        span.FITB .form-radio label,
+        span.FITB .form-checkbox label,
+        [data-blotid][data-type=checkbox] [data-labelid],
+        [data-blotid][data-type=radiobox] [data-labelid],
+        span.FITB-inptCont[data-type=checkbox] label,
+        span.FITB-inptCont[data-type=radiobox] label {
+            color: #2C3345;
+        }
+        .form-sub-label {
+            color: #464d5f;
+        }
+
+        .supernova {
+            background-color: #e8f4f8;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+        .supernova body {
+            background: transparent;
+        }
+
+        .form-textbox,
+        .form-textarea,
+        .form-dropdown,
+        .form-radio-other-input,
+        .form-checkbox-other-input,
+        .form-captcha input,
+        .form-spinner input {
+            background-color: #f9fbfd;
+            border: 1px solid #d1e0ed;
+            border-radius: 8px;
+            padding: 12px 15px;
+        }
+
+        .form-header-group {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border-radius: 12px;
+            color: white !important;
+        }
+
+        .form-header-group h1 {
+            color: white !important;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-header-group .form-subHeader {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .payment-methods-area {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-top: 20px;
+        }
+
+        .form-submit-button {
+            background: linear-gradient(135deg, #3498db, #2980b9) !important;
+            border: none !important;
+            color: white !important;
+            padding: 14px 28px !important;
+            font-size: 18px !important;
+            border-radius: 8px !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto 0;
+        }
+
+        .form-submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .forest-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .forest-info p {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .impact-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            width: 150px;
+            margin: 10px;
+        }
+
+        .impact-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 5px;
+        }
+
+        .impact-label {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <form class="jotform-form" onsubmit="return typeof testSubmitFunction !== 'undefined' && testSubmitFunction();" action="https://submit.jotform.com/submit/251864549438167" method="post" name="form_251864549438167" id="251864549438167" accept-charset="utf-8" autocomplete="on">
+        <input type="hidden" name="formID" value="251864549438167" />
+        <input type="hidden" id="JWTContainer" value="" />
+        <input type="hidden" id="cardinalOrderNumber" value="" />
+        <input type="hidden" id="jsExecutionTracker" name="jsExecutionTracker" value="build-date-1752113493915" />
+        <input type="hidden" id="submitSource" name="submitSource" value="unknown" />
+        <input type="hidden" id="submitDate" name="submitDate" value="undefined" />
+        <input type="hidden" id="buildDate" name="buildDate" value="1752113493915" />
+        <input type="hidden" name="uploadServerUrl" value="https://upload.jotform.com/upload" />
+        <input type="hidden" name="eventObserver" value="1" />
+        <input type="hidden" name="eventObserverPayment" value="control_paypalcomplete" />
+        
+        <div role="main" class="form-all">
+            <ul class="form-section page-section" role="presentation">
+                <li id="cid_31" class="form-input-wide" data-type="control_head">
+                    <div class="form-header-group header-large">
+                        <div class="header-text httal htvam">
+                            <h1 id="header_31" class="form-header" data-component="header">ForestGuard</h1>
+                            <div id="subHeader_31" class="form-subHeader">Thank you for your voluntary donation</div>
+                        </div>
+                    </div>
+                </li>
+                
+                <div class="forest-info">
+                    <p>Your contribution helps us protect endangered forests and wildlife habitats around the world. Every dollar makes a difference in our conservation efforts.</p>
+                </div>
+                
+                <div class="impact-section">
+                    <div class="impact-item">
+                        <div class="impact-number">250+</div>
+                        <div class="impact-label">Forests Protected</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">1.2M</div>
+                        <div class="impact-label">Trees Planted</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">75</div>
+                        <div class="impact-label">Species Saved</div>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-number">50k+</div>
+                        <div class="impact-label">Volunteers</div>
+                    </div>
+                </div>
+                
+                <li class="form-line jf-required" data-type="control_paypalcomplete" id="id_27" data-payment="true">
+                    <label class="form-label form-label-top" id="label_27" for="input_27" aria-hidden="false"> 
+                        Donation Amount<span class="form-required">*</span> 
+                    </label>
+                    <div id="cid_27" class="form-input-wide jf-required" data-layout="full">
+                        <div data-wrapper-react="true">
+                            <div data-wrapper-react="true" class="product-container-wrapper">
+                                <div class="filter-container"></div>
+                                <input type="hidden" name="simple_fpc" data-payment_type="paypalcomplete" data-component="payment1" value="27" />
+                                <input type="hidden" name="payment_transaction_uuid" id="paymentTransactionId" />
+                                <input type="hidden" name="payment_version" id="payment_version" value="4" />
+                                <input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+                                <input type="hidden" name="payment_discount_value" id="payment_discount_value" data-component="payment3" />
+                                <div id="image-overlay" class="overlay-content" style="display:none">
+                                    <img id="current-image" />
+                                    <span class="lb-prev-button">prev</span>
+                                    <span class="lb-next-button">next</span>
+                                    <span class="lb-close-button">( X )</span>
+                                    <span class="image-overlay-product-container"></span>
+                                </div>
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input type="text" class="form-textbox validate[required, Numeric]" id="input_27_donation" name="q27_donationAmount[price]" data-component="paymentDonation" aria-labelledby="label_27" data-testid="donationInput" placeholder="Enter amount" value="" />
+                                    <span class="donation_currency">USD</span>
+                                    <label data-testid="donationSubLabel" class="form-sub-label" for="input_27_donation" style="min-height:13px; margin-top: 8px; display: block;">
+                                        Please note that your voluntary donation cannot be refunded!
+                                    </label>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="form-line" data-type="control_paymentmethods" id="id_45">
+                    <label class="form-label form-label-top" id="label_45" for="input_45" aria-hidden="false"> 
+                        Payment Methods 
+                    </label>
+                    <div id="cid_45" class="form-input-wide" data-layout="full">
+                        <div class="payment-methods-area">
+                            <div data-wrapper-react="true" class="paypalcomplete-payment-wrapper" data-sandbox="disabled" data-currency="USD" data-merchantid="UYXJKTQ9U32NC" data-auth-only="No" data-show-spb="false" data-show-card-fields="true" data-show-fastlane="false" data-show-googlepay="true" data-show-applepay="false">
+                                <div id="paypal-commerce-platform-container">
+                                    <div class="paypal-toggle-buttons">
+                                        <div class="paypal-toggle">
+                                            <div class="paypal-toggle-content paypal-new-radioView " render-paypal-type="">
+                                                <div class="content-area">
+                                                    <div id="paypal-card-fields">
+                                                        <div class="payment-method-container" data-id="paypal-card-fields">
+                                                            <input class="form-radio" type="radio" name="paypal-payment-method" data-id="paypal-card-fields" id="paypal-card-fields-input" aria-describedby="label_45" />
+                                                            <label for="paypal-card-fields-input">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="paypal-card-fields-card-icon" width="20" height="20">
+                                                                    <path fill-rule="evenodd" d="M4 4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H4Zm17 4V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v1h18ZM3 10h18v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-7Zm2 4a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Zm12-1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Z" clip-rule="evenodd"></path>
+                                                                </svg>
+                                                                Debit or Credit Card
+                                                            </label>
+                                                            <div id="paypal-credit-card-fields">
+                                                                <div class="paypal-commerce-platform">
+                                                                    <div class="paypal-content">
+                                                                        <table class="form-address-table payment-form-table" style="border:0" cellPadding="0" cellSpacing="0" role="presentation">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td width="50%">
+                                                                                        <input type="text" id="27_cc_firstName" name="q27_donationAmount[cc_firstName]" class="form-textbox validate[required] cc_firstName" data-defaultvalue="" size="20" placeholder="First Name" data-component="cc_firstName" aria-label="Credit Card First Name" aria-labelledby="" value="" />
+                                                                                    </td>
+                                                                                    <td width="50%">
+                                                                                        <input type="text" id="27_cc_lastName" name="q27_donationAmount[cc_lastName]" class="form-textbox validate[required] cc_lastName" data-defaultvalue="" size="20" placeholder="Last Name" data-component="cc_lastName" aria-label="Credit Card Last Name" aria-labelledby="" value="" />
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="if_cc_field">
+                                                                                    <td width="50%">
+                                                                                        <div class="cc_numberField" style="width:100%"></div>
+                                                                                    </td>
+                                                                                    <td width="50%">
+                                                                                        <div class="cc_expiryField" style="width:100%"></div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td width="50%">
+                                                                                        <div class="cc_cvvField" style="width:100%"></div>
+                                                                                    </td>
+                                                                                    <td width="50%">
+                                                                                <tr style="display:none">
+                                                                                    <td><input id="paypal_complete_dummy" style="display:none" /></td>
+                                                                                </tr>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <div id="payments-sdk__contingency-lightbox"></div>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="paypal-google-pay" class="">
+                                                        <div class="payment-method-container" data-id="paypal-google-pay">
+                                                            <input class="form-radio" type="radio" name="paypal-payment-method" data-id="paypal-google-pay" id="paypal-googlepay-input" aria-label="Google Pay" aria-describedby="label_45" />
+                                                            <label for="paypal-googlepay-input" aria-hidden="true"></label>
+                                                            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 40" class="google-pay-logo" width="40" height="auto">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.293 25.113v-5.317h2.744c1.125 0 2.074-.377 2.848-1.12l.185-.188a3.828 3.828 0 0 0-.185-5.36 3.916 3.916 0 0 0-2.848-1.14h-4.405v13.125h1.661Zm0-6.929V13.6h2.786c.599 0 1.166.23 1.59.649.897.879.917 2.344.05 3.255a2.157 2.157 0 0 1-1.64.68h-2.786Z" fill="#3C4043"></path>
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.818 16.834c-.712-.66-1.682-.994-2.91-.994-1.578 0-2.764.586-3.548 1.748l1.465.931c.536-.795 1.268-1.193 2.197-1.193.588 0 1.155.22 1.599.617.433.377.68.921.68 1.497v.387c-.639-.356-1.444-.544-2.434-.544-1.155 0-2.084.272-2.775.827-.691.555-1.042 1.287-1.042 2.219-.02.848.34 1.654.98 2.198.65.586 1.475.879 2.445.879 1.145 0 2.053-.513 2.744-1.539h.072v1.246h1.59v-5.537c0-1.162-.352-2.083-1.063-2.742Zm-4.508 6.625a1.365 1.365 0 0 1-.547-1.1c0-.491.227-.9.67-1.224.454-.324 1.022-.492 1.693-.492.928-.01 1.65.2 2.166.618 0 .712-.278 1.33-.825 1.852a2.62 2.62 0 0 1-1.868.785 2.01 2.01 0 0 1-1.29-.44Z" fill="#3C4043"></path>
+                                                                <path d="M38.45 29.059 44 16.133h-1.806l-2.568 6.447h-.031l-2.63-6.447h-1.806l3.641 8.404-2.063 4.522h1.713Z" fill="#3C4043"></path>
+                                                                <path d="M14.435 17.117c.082.502.124 1.015.124 1.528 0 2.302-.805 4.239-2.208 5.547l-2.393-1.884a3.493 3.493 0 0 0 1.485-2.292H7.43v-2.9h7.005Z" fill="#4285F4"></path>
+                                                                <path d="m.797 21.858 2.466-1.936C3.85 21.7 5.49 23.03 7.43 23.03c1.001 0 1.857-.262 2.528-.722l2.393 1.884c-1.227 1.15-2.92 1.82-4.92 1.82a7.409 7.409 0 0 1-6.634-4.144v-.01Z" fill="#34A853"></path>
+                                                                <path d="M7.43 13.924a3.966 3.966 0 0 1 2.848 1.13l2.125-2.155A7.113 7.113 0 0 0 7.43 10.94c-2.806 0-5.375 1.612-6.633 4.155l2.465 1.947c.589-1.79 2.229-3.119 4.168-3.119Z" fill="#EA4335"></path>
+                                                                <path d="M.797 15.097 3.26 17.04a4.609 4.609 0 0 0 .003 2.88L.797 21.859a7.568 7.568 0 0 1 0-6.761Z" fill="#FBBC04"></path>
+                                                            </svg>
+                                                            <div id="googlepay-button-container" class="" style="display:none;width:100%"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="input_45_payment_method" name="q45_paymentMethods[payment_method]" class="" data-defaultvalue="" data-component="payment_method" aria-labelledby="" value="" />
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="form-line" data-type="control_button" id="id_38">
+                    <div id="cid_38" class="form-input-wide" data-layout="full">
+                        <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                            <button id="input_38" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField legacy-submit" data-component="button" data-content="">
+                                Submit Donation
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                
+                <li style="display:none">
+                    Should be Empty: <input type="text" name="website" value="" type="hidden" />
+                </li>
+            </ul>
+        </div>
+        
+        <script>
+            // 禁用广告初始化
+            window.brandingFooter = {
+                init: function() {} // 空函数防止广告加载
+            };
+            
+            // 其他必要的Jotform初始化代码
+            JotForm.showJotFormPowered = "none";
+            JotForm.poweredByText = "";
+        </script>
+        
+        <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="251864549438167" />
+        <script type="text/javascript">
+            var all_spc = document.querySelectorAll("form[id='251864549438167'] .simple_spc");
+            for (var i = 0; i < all_spc.length; i++) {
+                all_spc[i].value = "251864549438167-251864549438167";
+            }
+            
+            // 初始化表单
+            JotForm.init(function(){
+                /*INIT-START*/
+                JotForm.paymentProperties = {
+                    "styleColor":"gold",
+                    "styleShape":"rect",
+                    "styleSize":"medium",
+                    "styleLabel":"checkout",
+                    "styleLayout":"vertical",
+                    "payLaterEnabled":"No",
+                    "paymentFormProperties":{"products":false}
+                };
+                /*INIT-END*/
+            });
+            
+            setTimeout(function() {
+                JotForm.paymentExtrasOnTheFly([
+                    null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,
+                    {"description":"","name":"donationAmount","qid":"27","text":"Donation amount","type":"control_paypalcomplete"},
+                    null,null,null,
+                    {"name":"ForestGuard","qid":"31","text":"ForestGuard","type":"control_head"},
+                    null,null,null,null,null,null,
+                    {"name":"submit","qid":"38","text":"Submit","type":"control_button"},
+                    null,null,null,null,null,null,
+                    {"name":"paymentMethods","qid":"45","text":"Payment Methods","type":"control_paymentmethods"}
+                ]);
+            }, 20);
+        </script>
+    </form>
+</body>
+</html>
